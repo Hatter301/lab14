@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	int i = 0, j = 1, n,l=0,k=0;
+	int *a;
+	cin >> n;
+	if (n<=0)
+		cout << "Данные введены некорректно";
+	else {
+		a = (int *)malloc(n * sizeof(int));
+		while (i != n) {
+			cin >> a[i];
+			i++;
+		}
+		i = 0;
+		for (i; i < n - 1; i++)
+		for (j; j < n; j++)
+				if (a[i] == a[j]) {
+					k = i;
+					l = j;
+				}
+		if (k >= l)
+			cout << l + 1 << " " << k + 1;
+		else cout << k + 1 << " " << l + 1;
+			free(a);
+	}
+	return 0;
+}
