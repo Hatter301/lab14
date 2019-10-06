@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	int i = 0, n,min;
+	int *a;
+	cin >> n;
+	if (n<=0)
+		cout << "Данные введены некорректно";
+	else {
+		min = INT_MAX;
+		a = (int *)malloc(n * sizeof(int));
+		while (i != n) {
+			cin >> a[i];
+			i++;
+		}
+			i = 1;
+			for (i; i < n; i += 2)
+				if (a[i] < min)
+				min = a[i];
+			cout << min;
+			free(a);
+	}
+	return 0;
+}
