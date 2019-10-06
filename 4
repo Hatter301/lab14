@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+	int i = 0, n, l=0;
+	int *a;
+	cin >> n;
+	if (n<=0)
+		cout << "Данные введены некорректно";
+	else {
+		a = (int *)malloc(n * sizeof(int));
+		while (i != n) {
+			cin >> a[i];
+			i++;
+		}
+			i = 1;
+			for (i; i < n - 1; i++)
+				if ((a[i] > a[i + 1]) and (a[i] > a[i - 1]))
+					l = i;
+			if (l == 0)
+				cout << "Нет ни одного локального минимума";
+			else
+			cout << l+1;
+			free(a);
+	}
+	return 0;
+}
