@@ -2,13 +2,14 @@
 #include <cstdlib>
 using namespace std;
 int main() {
-	int i = 0, n, k, l, m, h;
+	int i = 0, n, k, l, m, h,p;
 		double s = 0;
 	int *a;
 	cin >> n>>k>>l;
 	if ((n<1) or (n<l) or (l<k) or (n<k))
 		cout << "Данные введены некорректно";
 	else {
+	p=l-k+1;
 		m = k - 1;
 		h = l - 1;
 		a = (int *)malloc(n * sizeof(int));
@@ -19,7 +20,7 @@ int main() {
 		i = 0;
 		for (m; m <= h; m++)
 			s = s + a[m];
-		cout << s/2;
+		cout << s/p;
 		free(a);
 	}
 	return 0;
