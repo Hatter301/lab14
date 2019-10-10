@@ -2,7 +2,7 @@
 #include <cstdlib>
 using namespace std;
 int main() {
-	int i = 0, j = 1, n,l=0,k=0;
+	int i = 0, j = 1, n,l=-1,k=-1;
 	int *a;
 	cin >> n;
 	if (n<=0)
@@ -14,13 +14,17 @@ int main() {
 			i++;
 		}
 		i = 0;
-		for (i; i < n - 1; i++)
+		for (i; i < n - 1; i++) {
 		for (j; j < n; j++)
 				if (a[i] == a[j]) {
 					k = i;
 					l = j;
 				}
-		if (k >= l)
+				j=i+2;
+		}
+		if ((k==-1) or (l==-1))
+		cout<<"Данные введены некорректно";
+		else if (k >= l)
 			cout << l + 1 << " " << k + 1;
 		else cout << k + 1 << " " << l + 1;
 			free(a);
